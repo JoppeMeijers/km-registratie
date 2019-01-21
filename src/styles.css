@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.nav-menu{
+    overflow: hidden;
+    background-color: #0747A6;
+    position: fixed;
+    bottom: 0;
+}
+
+.nav-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li{
+    margin-left: 5%;
+    float: left;
+}
