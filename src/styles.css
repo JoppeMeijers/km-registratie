@@ -1,20 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
+@import "~bootstrap/dist/css/bootstrap.css";
 
-.nav-menu{
-    overflow: hidden;
-    background-color: #0747A6;
-    position: fixed;
-    bottom: 0;
+
+/* Portrait for smartphones , max device is 6/7/8+ */
+@media only screen and (max-width: 736px) and (orientation: portrait) { 
+
+    .nav-menu{
+        overflow: hidden;
+        border-top-style: solid;
+        border-top-color: black;
+        border-top-width: 1px;
+        position: fixed;
+        bottom: 0;
+    }
+    
+    .nav-menu ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-menu ul li{
+        margin-left: 5%;
+        float: left;
+        height: 50px;
+        padding: 10px 16px;
+    }
+
+    .nav-menu ul li img{
+        width: 20px;
+    }   
+
+    #middle-button-menu{
+        background-color: #6DB4F0;
+        padding: 10px 22px;
+     
+    }
+
+    .head-application-bar{
+        background-color: #6DB4F0;
+       
+    }
+
+    .head-application-bar h2{
+      text-align: center;
+      padding: 22px 0px 4px 0px;
+      color: white;
+      font-size: 16pt;
+    }
+
+    .car-info-dashboard{
+        padding: 30px 5px 40px 5px;
+        background-color: #6DB4F0;
+        color: white;
+        margin-bottom: 30px;
+    }
+    .car-info-dashboard img{
+        margin-top: 13px;
+        width: 45px;
+        margin-bottom: 3px;
+    }
+
+    #total-km-month{
+        font-size: 32pt;
+        font-weight: 800;
+        margin-bottom: 0px;
+    }
+
+    .item-view{
+        padding: 14px 15px;
+        border-radius: 10px;
+        margin: 20px 15px 5px 15px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .item-view img{
+        width: 11px;
+        margin-right: 7px;
+        margin-top: -5px;
+    }
+
+    .item-view h3{
+        font-size: 13pt;
+    }
+
+    .item-view hr{
+        margin: 0px 0px 0px 0px;
+    }
+
+    .locations-dashboard p{
+        margin-top: 9px;
+        margin-bottom: 12px;
+    }
+
+
+    
+
+
+
 }
 
-.nav-menu ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu ul li{
-    margin-left: 5%;
-    float: left;
-}
