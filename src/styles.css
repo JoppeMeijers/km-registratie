@@ -162,6 +162,36 @@
         width: 140px;
     }
 
+    .favourites-list{
+        margin-top: 3%;
+    }
+
+    .favourites-list p{
+        margin-bottom: 0px;
+    }
+    
+    .edit-button img{
+        margin-left: 15px;
+    }
+
+    .btn-add-favourite{
+        background-color: #6DB4F0;
+        color: white;
+        border-radius: 20px;
+        font-size: 11pt;
+        margin-top: 5%;
+        margin-left: 26%;
+        width: 200px;
+    }
+
+    .form-group label{
+        font-weight: 700;
+        font-size: 11pt;
+        margin-top: 0%;
+        margin-left: 1%;
+        margin-bottom: 2%;
+    }
+
 
 
 }

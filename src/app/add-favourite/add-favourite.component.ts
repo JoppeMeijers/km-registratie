@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { FavouritesService } from './../services/favourites.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-favourite',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFavouriteComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("f") f: NgForm;
+
+  constructor(private FavouritesService: FavouritesService) { }
 
   ngOnInit() {
   }
+
+  save(newFavourite: HTMLInputElement){
+    this.FavouritesService.add(newFavourite);
+    this.f.resetForm();
+   }
+   
 
 }

@@ -21,7 +21,7 @@ export class AddRideComponent implements OnInit {
 
   set(newRide: HTMLInputElement){
     this.f.resetForm();
-    this.router.navigate(['/control-ride', newRide.date, newRide.from, newRide.to, newRide.km, newRide.desc]);
+    this.router.navigate(['/control-ride']);
   }
 
 }
