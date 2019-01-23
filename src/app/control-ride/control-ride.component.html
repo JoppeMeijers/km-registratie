@@ -1,3 +1,59 @@
-<p>
-  control-ride works!
-</p>
+<div class="row">
+  <div class="col-md-12 head-application-bar">
+    <h2>Controleer rit</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 labels-tiem">
+    <p>Klopt onderstaande rit?</p>  
+  </div>
+  <div class="col-md-12 item-view">
+    <div class="row">
+      <div class="col-6">
+        <span class="title-label-control">Van:</span>
+          <br>
+        <span>{{from}}</span>
+      </div>
+      <div class="col-6">
+          <span class="title-label-control">Naar:</span>
+            <br>
+          <span>{{to}}</span>
+      </div>
+    </div>
+
+    <div class="row control-rows">
+        <div class="col-6">
+          <span class="title-label-control">Datum:</span>
+            <br>
+          <span>{{date}}</span>
+        </div>
+        <div class="col-6">
+            <span class="title-label-control">Totale km:</span>
+              <br>
+            <span>{{km}}</span>
+        </div>
+      </div>
+
+      <div class="row control-rows">
+        <div class="col-12">
+          <span class="title-label-control">Extra omschrijving:</span>
+            <br>
+          <span>{{desc}}</span>
+        </div>
+      </div>
+    </div>
+
+      <div class="row control-rows">
+          <div class="col-6">
+            <button class="btn btn-control-ride" (click)="backClicked()"> Wijzig </button>
+          </div>
+          <div class="col-6">
+              <button class="btn btn-control-ride" (click)="save(from, to, date, km, desc)"> Opslaan </button>
+          </div>
+        </div>
+
+
+
+
+</div>

@@ -4,7 +4,9 @@
 
 /* Portrait for smartphones , max device is 6/7/8+ */
 @media only screen and (max-width: 736px) and (orientation: portrait) { 
-
+    body{
+        background-color: #F7F7F7;
+    }
     .nav-menu{
         overflow: hidden;
         border-top-style: solid;
@@ -12,6 +14,7 @@
         border-top-width: 1px;
         position: fixed;
         bottom: 0;
+        background-color: white;
     }
     
     .nav-menu ul{
@@ -71,6 +74,7 @@
         padding: 14px 15px;
         border-radius: 10px;
         margin: 20px 15px 5px 15px;
+        background-color: white;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     }
 
@@ -93,8 +97,70 @@
         margin-bottom: 12px;
     }
 
+    .back-button{
+        margin-top: 7%;
+    }
 
+    .back-button a {
+        list-style: none;
+        
+    }
+
+    .back-button a li{
+        color:#0B8EB5;
+    }
+
+    .back-button a li img{
+        margin-top: -3px;
+        width: 12px;
+    }
+
+    .form-add-drive{
+        margin-top: 5%;
+    }
+
+    .form-group label,{
+        font-weight: 700;
+        font-size: 11pt;
+    }
+
+    .form-group input,.form-group select,.form-group textarea{
+        box-shadow: 0 3px 12px rgba(0,0,0,0.16), 0 3px 12px rgba(0,0,0,0.23);
+    }
+
+    .btn-add-ride{
+        background-color: #6DB4F0;
+        border-radius: 20px;
+        font-size: 11pt;
+        width: 60%;
+        margin-top: 3%;
+        margin-left: 4%;
+        color: white;
+    }
+
+    .title-label-control{
+        font-weight: 700;
+    }
+    .labels-tiem p{
+        font-weight: 700;
+        font-size: 11pt;
+        margin-top: 8%;
+        margin-left: 1%;
+        margin-bottom: 0%;
+    }
+
+    .control-rows{
+        margin-top: 3%;
+    }
     
+    .btn-control-ride{
+        background-color: #6DB4F0;
+        color: white;
+        border-radius: 20px;
+        font-size: 11pt;
+        margin-left: 34%;
+        width: 140px;
+    }
 
 
 

@@ -8,6 +8,8 @@ import{ AngularFireDatabaseModule} from 'angularfire2/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -50,8 +52,10 @@ import { ChangeSettingsComponent } from './change-settings/change-settings.compo
       {path: 'overview', component: OverviewComponent},
       {path: 'add', component: AddRideComponent},
       {path: 'favourite', component: FavouriteComponent},
-      {path: 'settings', component: SettingsComponent}
+      {path: 'settings', component: SettingsComponent},
+      {path: 'control-ride/:date/:from/:to/:km/:desc', component: ControlRideComponent},
     ]),
+    FormsModule,
 
     
   ],

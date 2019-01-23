@@ -3,3 +3,45 @@
     <h2>Rit toevoegen</h2>
   </div>
 </div>
+
+<div class="row back-button">
+  <div class="col-md-12">
+    <a routerLink="/"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="col-md-12 form-add-drive">
+    <form #f="ngForm" (ngSubmit)="set(f.value)" >
+      <div class="form-group col-md-12">
+        <label for="date">Datum:</label><br>
+        <input ngModel required name="date" id="date" type="date" #clientName="ngModel" class="form-control">
+      </div>
+      <div class="form-group col-md-12">
+          <label for="from">Van:</label><br>
+          <select ngModel required name="from" id="from" type="" #clientName="ngModel" class="form-control">
+            <option>Bestemming A</option>
+            <option>Bestemming B</option>
+            <option>Bestemming C</option>
+          </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="to">Naar:</label><br>
+            <select ngModel required name="to" id="to" type="" #clientName="ngModel" class="form-control">
+              <option>Bestemming A</option>
+              <option>Bestemming B</option>
+              <option>Bestemming C</option>
+            </select>
+          </div>
+          <div class="form-group col-md-12">
+              <label for="km">Aantal km:</label><br>
+              <input ngModel required name="km" id="km" type="number" #clientName="ngModel" class="form-control">
+            </div>
+        <div class="form-group col-md-12 ">
+          <label for="desc">Omschrijving:</label><br>
+          <textarea ngModel name="desc" id="desc" class="form-control"></textarea>
+        </div>
+      <button class="btn btn-add-ride" [disabled]="!f.valid">volgende</button>
+    </form>
+  </div>
+</div>
