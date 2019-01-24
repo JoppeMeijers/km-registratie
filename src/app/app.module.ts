@@ -53,7 +53,7 @@ import { ChangeSettingsComponent } from './change-settings/change-settings.compo
       {path: 'add', component: AddRideComponent},
       {path: 'favourite', component: FavouriteComponent},
       {path: 'settings', component: SettingsComponent},
-      {path: 'control-ride/:date/:from/:to/:km/:desc', component: ControlRideComponent},
+      {path: 'control-ride', component: ControlRideComponent},
       {path: 'add-favourite', component: AddFavouriteComponent},
     ]),
     FormsModule,

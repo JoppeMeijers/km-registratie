@@ -22,14 +22,11 @@ export class ControlRideComponent implements OnInit {
   constructor(private route: ActivatedRoute, private RidesService: RidesService, private router: Router, private _location: Location) { }
 
   ngOnInit() {
-    this.route.paramMap
-    .subscribe(params =>{
-      this.date = params.get('date');
-      this.from = params.get('from');
-      this.to = params.get('to');
-      this.km = params.get('km');
-      this.desc = params.get('desc');
-    })
+      this.date = localStorage.getItem('date')
+      this.from = localStorage.getItem('from')
+      this.to = localStorage.getItem('to')
+      this.km = localStorage.getItem('km');
+      this.desc = localStorage.getItem('desc')
   }
 
   backClicked(){
