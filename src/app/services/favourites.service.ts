@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FavouritesService {
-
+  favourite;
+  favourites$;
   favouriteId;
+  valueFavourite;
 
   constructor(private db: AngularFireDatabase) { }
 
@@ -21,5 +23,19 @@ export class FavouritesService {
       town: (newFavourite.companyTown),
       isActive: true,
   });
+  }
+
+
+
+  update(client, id){
+    console.log(id);
+    this.db.object('/favourites/' + id).update({
+      company: (client.companyName),
+      id: (id),
+      isActive: true,
+      postal: (client.companyCode),
+      street: (client.companyStreet),
+      town:  (client.companyTown)
+    })
   }
 }

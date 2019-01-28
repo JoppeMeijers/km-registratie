@@ -3,3 +3,64 @@
     <h2>Overzicht</h2>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12 labels-tiem">
+    <p>Maanden</p>  
+  </div> 
+</div>
+
+<div class="row">
+    <div class="col-md-12 item-view overview-list">
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Januari
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <div *ngFor="let ride of (allRides$ | async )">
+                  <li *ngIf="ride.date  < '2019-02-01' ">{{ride.date}}</li>
+                </div>
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+      <div class="col-md-12 item-view overview-list">
+          <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Februari
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ul>
+                  <div *ngFor="let ride of (allRides$ | async )">
+                    <li *ngIf="ride.date >= '2019-02-01' && ride.date <= '2019-03-01'">{{ride.date}}</li>
+                  </div>
+                </ul>
+              </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-md-12 item-view overview-list">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Maart
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <ul>
+                    <div *ngFor="let ride of (allRides$ | async )">
+                      <li *ngIf="ride.date >= '2019-03-01' && ride.date <= '2019-04-01'">{{ride.date}}</li>
+                    </div>
+                  </ul>
+                </mat-expansion-panel>
+              </mat-accordion>
+          </div>
+</div>
+
+<div class="row">
+  <button class="btn btn-add-favourite" routerLink="/add-favourite">Toevoegen</button>
+</div>

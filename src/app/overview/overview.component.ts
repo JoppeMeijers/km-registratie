@@ -1,4 +1,6 @@
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-overview',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  allRidesref: AngularFireList<any>;
+  allRides$: Observable<any[]>;
+
+  constructor(private db: AngularFireDatabase) {
+
+    this.allRidesref = db.list('/rides');
+    this.allRides$ = this.allRidesref.valueChanges();
+    this.allRides$.subscribe(res=> console.log(res));
+  
+  }
 
   ngOnInit() {
   }

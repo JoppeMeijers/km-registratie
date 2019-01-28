@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import{ AngularFireModule} from 'angularfire2';
 import{ AngularFireDatabaseModule} from 'angularfire2/database';
@@ -23,6 +24,9 @@ import { OverviewChangeComponent } from './overview-change/overview-change.compo
 import { AddFavouriteComponent } from './add-favourite/add-favourite.component';
 import { ChangeFavouriteComponent } from './change-favourite/change-favourite.component';
 import { ChangeSettingsComponent } from './change-settings/change-settings.component';
+
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -55,8 +59,12 @@ import { ChangeSettingsComponent } from './change-settings/change-settings.compo
       {path: 'settings', component: SettingsComponent},
       {path: 'control-ride', component: ControlRideComponent},
       {path: 'add-favourite', component: AddFavouriteComponent},
+      {path: 'change-favourite/:id', component: ChangeFavouriteComponent},
     ]),
     FormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatDatepickerModule
 
     
   ],

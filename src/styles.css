@@ -162,12 +162,21 @@
         width: 140px;
     }
 
-    .favourites-list{
+    .favourites-list, .overview-list{
         margin-top: 3%;
     }
 
-    .favourites-list p{
+    .favourites-list p, .overview-list p{
+        padding-top: 2%;
         margin-bottom: 0px;
+    }
+
+    .edit-button button{
+        padding-bottom: 0%;
+    }
+
+    .edit-button:hover{
+        opacity: 0.5;
     }
     
     .edit-button img{

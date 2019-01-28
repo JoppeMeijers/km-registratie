@@ -15,25 +15,25 @@
     <form #f="ngForm" (ngSubmit)="set(f.value)" >
       <div class="form-group col-md-12">
         <label for="date">Datum:</label><br>
-        <input ngModel required name="date" id="date" type="date" #clientName="ngModel" class="form-control">
+        <input ngModel required name="date" id="date" type="date"  class="form-control">
       </div>
       <div class="form-group col-md-12">
           <label for="from">Van:</label><br>
-          <select ngModel required name="from" id="from" type="" #clientName="ngModel" class="form-control" > 
+          <select ngModel required name="from" id="from" type=""  class="form-control" > 
               <option> </option>
             <option *ngFor="let favourite of (favourites$ | async)">{{favourite.company}}</option>
           </select>
         </div>
         <div class="form-group col-md-12">
             <label for="to">Naar:</label><br>
-            <select ngModel required name="to" id="to" type="" #clientName="ngModel" class="form-control" >
+            <select ngModel required name="to" id="to" type="" class="form-control" >
               <option> </option>
               <option *ngFor="let favourite of (favourites$ | async)">{{favourite.company}}</option>
             </select>
           </div>
           <div class="form-group col-md-12">
               <label for="km">Aantal km:</label><br>
-              <input ngModel required name="km" id="km" type="number" #clientName="ngModel" class="form-control">
+              <input ngModel required name="km" id="km" type="number"  class="form-control">
             </div>
         <div class="form-group col-md-12 ">
           <label for="desc">Omschrijving:</label><br>
