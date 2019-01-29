@@ -4,11 +4,18 @@
   </div>
 </div>
 
-<div class="row back-button">
-  <div class="col-md-12">
-    <a routerLink="/"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
+<div class="row">
+
+    <div class="col-4 back-button">
+        <a (click)="backClicked()"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
+    </div>
+    <div class="col-4 day-tiem">
+      <p>Rit toevoegen</p>  
+    </div> 
+    <div class="col-4">
+
+    </div>
   </div>
-</div>
 
 <div class="row"> 
   <div class="col-md-12 form-add-drive">

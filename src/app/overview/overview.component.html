@@ -10,7 +10,7 @@
   </div> 
 </div>
 
-<div class="row">
+<div class="row padding-row">
     <div class="col-md-12 item-view overview-list">
         <mat-accordion>
             <mat-expansion-panel>
@@ -19,10 +19,11 @@
                   Januari
                 </mat-panel-title>
               </mat-expansion-panel-header>
+              <hr>
               <ul>
-                <div *ngFor="let ride of (allRides$ | async )">
-                  <li *ngIf="ride.date  < '2019-02-01' ">{{ride.date}}</li>
-                </div>
+                  <div *ngFor="let ride of uniqueDates">
+                      <li *ngIf="ride >= '2019-01-01' && ride < '2019-02-01'">{{ride | date:'dd-MM-yyy'}} <a [routerLink]="['/day-overview', ride]"> <span class="check" >Bekijk</span></a></li>
+                   </div>
               </ul>
             </mat-expansion-panel>
           </mat-accordion>
@@ -35,10 +36,11 @@
                     Februari
                   </mat-panel-title>
                 </mat-expansion-panel-header>
+                <hr>
                 <ul>
-                  <div *ngFor="let ride of (allRides$ | async )">
-                    <li *ngIf="ride.date >= '2019-02-01' && ride.date <= '2019-03-01'">{{ride.date}}</li>
-                  </div>
+                    <div *ngFor="let ride of uniqueDates">
+                        <li *ngIf="ride >= '2019-02-01' && ride < '2019-03-01'">{{ride | date:'dd-MM-yyy'}} <a [routerLink]="['/day-overview', ride]"> <span class="check" >Bekijk</span></a></li>
+                     </div>
                 </ul>
               </mat-expansion-panel>
             </mat-accordion>
@@ -51,16 +53,13 @@
                       Maart
                     </mat-panel-title>
                   </mat-expansion-panel-header>
+                  <hr>
                   <ul>
-                    <div *ngFor="let ride of (allRides$ | async )">
-                      <li *ngIf="ride.date >= '2019-03-01' && ride.date <= '2019-04-01'">{{ride.date}}</li>
+                    <div *ngFor="let ride of uniqueDates">
+                       <li *ngIf="ride >= '2019-03-01' && ride < '2019-04-01'">{{ride  | date:'dd-MM-yyy'}} <a [routerLink]="['/day-overview', ride]"> <span class="check" >Bekijk</span></a></li>
                     </div>
                   </ul>
                 </mat-expansion-panel>
               </mat-accordion>
           </div>
-</div>
-
-<div class="row">
-  <button class="btn btn-add-favourite" routerLink="/add-favourite">Toevoegen</button>
 </div>

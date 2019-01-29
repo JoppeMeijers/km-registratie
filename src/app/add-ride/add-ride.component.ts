@@ -4,6 +4,7 @@ import { RidesService } from './../services/rides.service';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -19,13 +20,17 @@ export class AddRideComponent implements OnInit {
   favouritesRef: AngularFireList<any>; 
   favourites$: Observable<any[]>;
 
-  constructor(private RidesService: RidesService,private router: Router, private db: AngularFireDatabase) {
+  constructor(private RidesService: RidesService,private router: Router, private db: AngularFireDatabase,private _location: Location) {
     this.favouritesRef = db.list('/favourites');
     this.favourites$ = this.favouritesRef.valueChanges();
     this.favourites$.subscribe(res=> console.log(res));
    }
 
   ngOnInit() {
+  }
+
+  backClicked(){
+    this._location.back();
   }
 
   set(newRide){

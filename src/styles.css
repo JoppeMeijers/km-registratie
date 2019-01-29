@@ -15,6 +15,7 @@
         position: fixed;
         bottom: 0;
         background-color: white;
+        z-index: 999;
     }
     
     .nav-menu ul{
@@ -141,12 +142,22 @@
     .title-label-control{
         font-weight: 700;
     }
+
+  
     .labels-tiem p{
         font-weight: 700;
         font-size: 11pt;
         margin-top: 8%;
         margin-left: 1%;
         margin-bottom: 0%;
+    }
+
+    .day-tiem{
+        font-weight: 700;
+        font-size: 11pt;
+        margin-top: 8%;
+        margin-bottom: 0%;
+        text-align: center;
     }
 
     .control-rows{
@@ -171,6 +182,31 @@
         margin-bottom: 0px;
     }
 
+    .overview-list ul{
+        padding-left: 0px;
+    }   
+
+    .overview-list ul li{
+        list-style: none;
+        font-weight: 300;
+        font-size: 11pt;
+        padding: 8px 0px;
+    }
+
+    .overview-list hr{
+        margin-top: -9px;
+    }
+
+
+    .check{
+        float: right;
+        color: #0089B2;
+    }
+
+    .check:hover{
+        opacity: 0.8;
+    }
+
     .edit-button button{
         padding-bottom: 0%;
     }
@@ -191,6 +227,7 @@
         margin-top: 5%;
         margin-left: 26%;
         width: 200px;
+        margin-bottom: 20%;
     }
 
     .form-group label{
@@ -201,6 +238,24 @@
         margin-bottom: 2%;
     }
 
+    .change-day-ride{
+        text-align: center;
+        color:#0089B2;
+    }
+
+    .change-day-ride a{
+        color:#0089B2;
+        font-size: 11pt;
+    }
+
+    .change-day-ride hr{
+        margin-top: 4px;
+       padding: 3px 0px;
+    }
+
+    .padding-row{
+        margin-bottom: 30%;
+    }
 
 
 }

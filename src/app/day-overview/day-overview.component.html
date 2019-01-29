@@ -1,5 +1,64 @@
 <div class="row">
-  <div class="col-md-12 head-application-bar">
-    <h2>Overzicht</h2>
+    <div class="col-md-12 head-application-bar">
+      <h2>Overzicht</h2>
+    </div>
   </div>
-</div>
+
+ 
+  
+  <div class="row">
+
+    <div class="col-4 back-button">
+        <a (click)="backClicked()"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
+    </div>
+    <div class="col-4 day-tiem">
+      <p>{{day}}</p>  
+    </div> 
+    <div class="col-4">
+
+    </div>
+  </div>
+  
+    <div *ngFor="let ride of (allRidesDay$ | async)">
+      <div class=" item-view overview-list" *ngIf="ride.date == day">
+          <div class="row">
+            <div class="col-6">
+              <span class="title-label-control">Van:</span>
+              <br>
+              <span>{{ride.from}}</span>
+            </div>
+            <div class="col-6">
+              <span class="title-label-control">Naar:</span>
+              <br>
+              <span>{{ride.to}}</span>
+            </div>
+          </div>
+          <div class="row control-rows">
+            <div class="col-6">
+              <span class="title-label-control">Datum:</span>
+                <br>
+                <span>{{ride.date}}</span>
+            </div>
+            <div class="col-6">
+              <span class="title-label-control">Totale km:</span>
+              <br>
+              <span>{{ride.km}}</span>
+             </div>
+            </div>
+            <div class="row control-rows">
+              <div class="col-12">
+                <span class="title-label-control">Extra omschrijving:</span>
+                <br>
+                <span>{{ride.desc}}</span>
+              </div>
+            </div>
+              <div class="row control-rows">
+                  <div class="col-12 change-day-ride">
+                    <hr>
+                    <a [routerLink]="['/change-ride', ride.id, day]">Rit wijzigen</a>
+                  </div>
+            </div>
+      </div>
+    </div>
+
+  

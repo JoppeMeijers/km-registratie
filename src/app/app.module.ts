@@ -6,6 +6,7 @@ import{ AngularFireModule} from 'angularfire2';
 import{ AngularFireDatabaseModule} from 'angularfire2/database';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -27,6 +28,8 @@ import { ChangeSettingsComponent } from './change-settings/change-settings.compo
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ChangeRideComponent } from './change-ride/change-ride.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -44,7 +47,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     OverviewChangeComponent,
     AddFavouriteComponent,
     ChangeFavouriteComponent,
-    ChangeSettingsComponent
+    ChangeSettingsComponent,
+    ChangeRideComponent
   ],
   imports: [
     BrowserModule,
@@ -60,15 +64,18 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
       {path: 'control-ride', component: ControlRideComponent},
       {path: 'add-favourite', component: AddFavouriteComponent},
       {path: 'change-favourite/:id', component: ChangeFavouriteComponent},
+      {path: 'day-overview/:date', component: DayOverviewComponent},
+      {path: 'change-ride/:id/:date', component: ChangeRideComponent},
     ]),
     FormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    
 
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,4 +24,17 @@ export class RidesService {
       isActive: true,
   });
   }
+
+
+  update(ride, id, date){
+    this.db.object('/rides/' + id).update({
+      date: (date),
+      id: (id),
+      isActive: true,
+      desc: (ride.desc),
+      from: (ride.from),
+      to:  (ride.from),
+      km: (ride.km)
+    })
+  }
 }
