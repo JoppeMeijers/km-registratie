@@ -6,7 +6,11 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class RidesService {
 
-  constructor(private db: AngularFireDatabase) { }
+  uid;
+
+  constructor(private db: AngularFireDatabase) {
+     this.uid =  localStorage.getItem('uid');
+   }
 
   rideId;
 
@@ -14,7 +18,7 @@ export class RidesService {
  add(newRide){
     this.rideId = Math.random().toString(36).substring(7) + Math.random().toString(36).substring(7);
 
-    this.db.object('/rides/' + this.rideId).set({
+    this.db.object(this.uid + '/rides/' + this.rideId).set({
       id: (this.rideId),
       date: (newRide.date),
       desc: (newRide.desc),
@@ -27,7 +31,7 @@ export class RidesService {
 
 
   update(ride, id, date){
-    this.db.object('/rides/' + id).update({
+    this.db.object(this.uid + '/rides/' + id).update({
       date: (date),
       id: (id),
       isActive: true,

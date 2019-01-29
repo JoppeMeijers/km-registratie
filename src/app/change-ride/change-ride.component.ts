@@ -18,13 +18,13 @@ export class ChangeRideComponent implements OnInit {
 
   favouritesRef: AngularFireList<any>;
   favourites$: Observable<any[]>;
-
+  uid;
 
   
 
   constructor(private db: AngularFireDatabase ,private router: Router,private route: ActivatedRoute, private _location: Location, private RidesService: RidesService) { 
-
-    this.favouritesRef = db.list('/favourites');
+    this.uid = localStorage.getItem('uid');  
+    this.favouritesRef = db.list(this.uid + '/favourites');
     this.favourites$ = this.favouritesRef.valueChanges();
 
   }

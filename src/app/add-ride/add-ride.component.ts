@@ -15,13 +15,15 @@ import {Location} from '@angular/common';
 export class AddRideComponent implements OnInit {
   @ViewChild("f") f:NgForm;
   submittedForm: "bedankt voor het invullen";
+  uid;
 
 
   favouritesRef: AngularFireList<any>; 
   favourites$: Observable<any[]>;
 
   constructor(private RidesService: RidesService,private router: Router, private db: AngularFireDatabase,private _location: Location) {
-    this.favouritesRef = db.list('/favourites');
+    this.uid = localStorage.getItem('uid');  
+    this.favouritesRef = db.list(this.uid + '/favourites');
     this.favourites$ = this.favouritesRef.valueChanges();
     this.favourites$.subscribe(res=> console.log(res));
    }

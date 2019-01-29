@@ -6,12 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class ProfilesService {
   profileId;
-  constructor(private db: AngularFireDatabase) { }
+  uid;
+  constructor(private db: AngularFireDatabase) { 
+    this.uid =  localStorage.getItem('uid');
+  }
 
   updateName(profile, id){
     console.log(profile);
   
-    this.db.object('/profiles/' + id).update({
+    this.db.object(this.uid + '/profiles/' + id).update({
       id: (id),
       name: (profile.name),
     })
@@ -20,7 +23,7 @@ export class ProfilesService {
   updateCompany(profile, id){
     console.log(profile);
   
-    this.db.object('/profiles/' + id).update({
+    this.db.object(this.uid + '/profiles/' + id).update({
       id: (id),
       company: (profile.company),
     })
@@ -29,7 +32,7 @@ export class ProfilesService {
   updateCar(profile, id){
     console.log(profile);
   
-    this.db.object('/profiles/' + id).update({
+    this.db.object(this.uid + '/profiles/' + id).update({
       id: (id),
       car: (profile.car),
     })

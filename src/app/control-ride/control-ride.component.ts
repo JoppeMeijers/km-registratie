@@ -2,6 +2,7 @@ import { RidesService } from './../services/rides.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Location} from '@angular/common';
+import { unescapeIdentifier } from '@angular/compiler';
 
 @Component({
   selector: 'app-control-ride',
@@ -16,6 +17,7 @@ export class ControlRideComponent implements OnInit {
   km;
   desc;
   id;
+  uid;
 
   saveData;
 
@@ -26,23 +28,27 @@ export class ControlRideComponent implements OnInit {
       this.from = localStorage.getItem('from')
       this.to = localStorage.getItem('to')
       this.km = localStorage.getItem('km');
-      this.desc = localStorage.getItem('desc')
+      this.desc = localStorage.getItem('desc');
+  
+
   }
 
   backClicked(){
     this._location.back();
   }
 
-  save(from, to, date, km, desc){
+  save(from, to, date, km, desc, uid){
     this.saveData = {
       from: from,
       to: to,
       date: date,
       km: km,
       desc: desc,
+
     }
+
     this.RidesService.add(this.saveData);
-    this.router.navigate(['/']);
+    this.router.navigate(['dashboard']);
    }
 
 }

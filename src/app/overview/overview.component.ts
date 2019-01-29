@@ -23,9 +23,12 @@ export class OverviewComponent implements OnInit {
   allRidesref: AngularFireList<any>;
   allRides$: Observable<any[]>;
 
+  uid;
   constructor(private db: AngularFireDatabase, public datepipe: DatePipe) {
 
-    this.allRidesref = db.list('/rides');
+    this.uid = localStorage.getItem('uid');  
+
+    this.allRidesref = db.list(this.uid + '/rides');
     this.allRides$ = this.allRidesref.valueChanges();
     this.allRides$.subscribe(res=> this.getAllUnique(res));
   

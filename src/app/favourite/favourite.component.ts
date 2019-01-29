@@ -11,9 +11,11 @@ export class FavouriteComponent implements OnInit {
 
   favouritesRef: AngularFireList<any>; 
   favourites$: Observable<any[]>;
+  uid;
 
   constructor(private db: AngularFireDatabase) {
-    this.favouritesRef = db.list('/favourites');
+    this.uid = localStorage.getItem('uid');  
+    this.favouritesRef = db.list(this.uid + '/favourites');
     this.favourites$ = this.favouritesRef.valueChanges();
     this.favourites$.subscribe(res=> console.log(res));
 

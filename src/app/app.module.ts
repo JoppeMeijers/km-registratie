@@ -1,3 +1,5 @@
+import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard.ts.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
 import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -75,19 +77,24 @@ import { VerifyEmailComponent } from './authentication/verify-email/verify-email
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
-      {path: '', component: DashboardComponent},
-      {path: 'overview', component: OverviewComponent},
-      {path: 'add', component: AddRideComponent},
-      {path: 'favourite', component: FavouriteComponent},
-      {path: 'settings', component: SettingsComponent},
-      {path: 'control-ride', component: ControlRideComponent},
-      {path: 'add-favourite', component: AddFavouriteComponent},
-      {path: 'change-favourite/:id/:company/:postal/:street/:town', component: ChangeFavouriteComponent},
-      {path: 'day-overview/:date', component: DayOverviewComponent},
-      {path: 'change-ride/:id/:date', component: ChangeRideComponent},
-      {path: 'change-name/:id', component: NameComponent},
-      {path: 'change-company/:id', component: CompanyComponent},
-      {path: 'change-car/:id', component: CarComponent},
+      {path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+      { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
+      { path: 'forget-password', component: ForgetPasswordComponent, canActivate: [SecureInnerPagesGuard] },
+      { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
+      { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
+      {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+      {path: 'overview', component: OverviewComponent, canActivate: [AuthGuard]},
+      {path: 'add', component: AddRideComponent, canActivate: [AuthGuard]},
+      {path: 'favourite', component: FavouriteComponent, canActivate: [AuthGuard]},
+      {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+      {path: 'control-ride', component: ControlRideComponent, canActivate: [AuthGuard]},
+      {path: 'add-favourite', component: AddFavouriteComponent, canActivate: [AuthGuard]},
+      {path: 'change-favourite/:id/:company/:postal/:street/:town', component: ChangeFavouriteComponent, canActivate: [AuthGuard]},
+      {path: 'day-overview/:date', component: DayOverviewComponent, canActivate: [AuthGuard]},
+      {path: 'change-ride/:id/:date', component: ChangeRideComponent, canActivate: [AuthGuard]},
+      {path: 'change-name/:id', component: NameComponent, canActivate: [AuthGuard]},
+      {path: 'change-company/:id', component: CompanyComponent, canActivate: [AuthGuard]},
+      {path: 'change-car/:id', component: CarComponent, canActivate: [AuthGuard]},
     ]),
     FormsModule,
     BrowserAnimationsModule,

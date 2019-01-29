@@ -14,15 +14,18 @@ export class DayOverviewComponent implements OnInit {
 
   allRidesDayref: AngularFireList<any>;
   allRidesDay$: Observable<any[]>;
+  uid;
 
 
   constructor(private route: ActivatedRoute, private _location: Location, private db: AngularFireDatabase) { 
-      this.route.paramMap.subscribe(params =>{
+    
+    this.uid = localStorage.getItem('uid');  
+    this.route.paramMap.subscribe(params =>{
         this.day = params.get('date');
       });
 
 
-    this.allRidesDayref = db.list('/rides');
+    this.allRidesDayref = db.list(this.uid +'/rides');
     this.allRidesDay$ = this.allRidesDayref.valueChanges();
     this.allRidesDay$.subscribe(res=> console.log(res));
   }

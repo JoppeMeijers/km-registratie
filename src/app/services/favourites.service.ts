@@ -9,13 +9,16 @@ export class FavouritesService {
   favourites$;
   favouriteId;
   valueFavourite;
+  uid;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) { 
+    this.uid =  localStorage.getItem('uid');
+  }
 
   add(newFavourite){
     this.favouriteId = Math.random().toString(36).substring(7) + Math.random().toString(36).substring(7);
 
-    this.db.object('/favourites/' + this.favouriteId).set({
+    this.db.object(this.uid + '/favourites/' + this.favouriteId).set({
       id: (this.favouriteId),
       company: (newFavourite.companyName),
       street: (newFavourite.companyStreet),
@@ -29,7 +32,7 @@ export class FavouritesService {
 
   update(client, id){
     console.log(id);
-    this.db.object('/favourites/' + id).update({
+    this.db.object(this.uid +'/favourites/' + id).update({
       company: (client.companyName),
       id: (id),
       isActive: true,

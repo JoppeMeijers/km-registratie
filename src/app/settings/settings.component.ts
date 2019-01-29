@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { ProfilesService } from './../services/profiles.service';
 
@@ -22,16 +23,18 @@ export class SettingsComponent implements OnInit {
 
   profileDataRef: AngularFireList<any>;
   profileData$: Observable<any[]>;
+  uid;
 
 
-  constructor(private ProfilesService: ProfilesService, private db: AngularFireDatabase) { 
-    this.profileDataRef = db.list('/profiles');
+  constructor(private ProfilesService: ProfilesService, private db: AngularFireDatabase, public AuthService: AuthService) { 
+    this.uid = localStorage.getItem('uid');  
+    this.profileDataRef = db.list(this.uid + '/profiles');
     this.profileData$ = this.profileDataRef.valueChanges();
-    this.profileData$.subscribe(res=> console.log(res));
   }
 
   ngOnInit() {
   }
+
 
  
 
