@@ -22,21 +22,21 @@
         <form #f="ngForm" (ngSubmit)="update(f.value)" >
               <div class="form-group col-md-12">
                 <label for="companyName">Bedrijfsnaam:</label><br>
-                <input ngModel required name="companyName" id="companyName" type="text" #clientName="ngModel" class="form-control">
+                <input ngModel required name="companyName" id="companyName" type="text" #clientName="ngModel" class="form-control" placeholder="{{company}}">
               </div>
               <div class="form-group col-md-12">
                   <label for="companyStreet">Straatnaam + Huisnummer:</label><br>
-                  <input ngModel required name="companyStreet" id="companyStreet" type="text" #clientName="ngModel" class="form-control">
+                  <input ngModel required name="companyStreet" id="companyStreet" type="text" #clientName="ngModel" class="form-control" placeholder="{{street}}">
               </div>
               <div class="form-group col-md-12">
                   <label for="companyCode">Postcode:</label><br>
-                  <input ngModel required name="companyCode" id="companyCode" type="text" #clientName="ngModel" class="form-control">
+                  <input ngModel required name="companyCode" id="companyCode" type="text" #clientName="ngModel" class="form-control" placeholder="{{postal}}">
               </div>
               <div class="form-group col-md-12">
                   <label for="companyTown">Vestigingplaats:</label><br>
-                  <input ngModel required name="companyTown" id="companyTown" type="text" #clientName="ngModel" class="form-control">
+                  <input ngModel required name="companyTown" id="companyTown" type="text" #clientName="ngModel" class="form-control" placeholder="{{town}}">
               </div>
-          <button class="btn btn-add-ride" [disabled]="!f.valid">Wijzig</button>
+          <button class="btn btn-add-settings" [disabled]="!f.valid">Wijzig</button>
         </form>
       </div>
 

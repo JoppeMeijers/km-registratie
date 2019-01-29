@@ -3,3 +3,52 @@
     <h2>Instellingen</h2>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12 labels-tiem">
+    <p>Profiel</p>  
+  </div> 
+</div>
+
+<div class="row">
+    <div class="col-md-12 settings-label">
+        <label>Naam:</label>
+    </div>
+    <div class="col-md-12 item-view settings-list" *ngFor="let profile of (profileData$ | async)">
+      <div class="row">
+          <div class="col-10">
+              <p>{{profile.name}}</p>
+          </div>
+          <div class="col-2 edit-button">
+              <button class="btn" [routerLink]="['/change-name', profile.id]" ><img src="assets/img/edit.svg"></button>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-12 settings-label">
+            <label>Bedrijf:</label>
+        </div>
+    <div class="col-md-12 item-view settings-list" *ngFor="let profile of (profileData$ | async)">
+        <div class="row">
+            <div class="col-10">
+                <p>{{profile.company}}</p>
+            </div>
+            <div class="col-2 edit-button">
+                <button class="btn" [routerLink]="['/change-company', profile.id]" ><img src="assets/img/edit.svg"></button>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-12 settings-label">
+            <label>Auto:</label>
+        </div>
+      <div class="col-md-12 item-view settings-list" *ngFor="let profile of (profileData$ | async)">
+          <div class="row">
+              <div class="col-10">
+                  <p>{{profile.car}}</p>
+              </div>
+              <div class="col-2 edit-button">
+                  <button class="btn" [routerLink]="['/change-car', profile.id]" ><img src="assets/img/edit.svg"></button>
+              </div>
+          </div>
+        </div>
+</div>
+

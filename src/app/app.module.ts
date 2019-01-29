@@ -1,9 +1,12 @@
+import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import{ AngularFireModule} from 'angularfire2';
 import{ AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 
@@ -21,15 +24,24 @@ import { SettingsComponent } from './settings/settings.component';
 import { AddRideComponent } from './add-ride/add-ride.component';
 import { ControlRideComponent } from './control-ride/control-ride.component';
 import { DayOverviewComponent } from './day-overview/day-overview.component';
-import { OverviewChangeComponent } from './overview-change/overview-change.component';
 import { AddFavouriteComponent } from './add-favourite/add-favourite.component';
 import { ChangeFavouriteComponent } from './change-favourite/change-favourite.component';
 import { ChangeSettingsComponent } from './change-settings/change-settings.component';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+
+
 import { ChangeRideComponent } from './change-ride/change-ride.component';
 import { DatePipe } from '@angular/common';
+import { NameComponent } from './change-profile/name/name.component';
+import { CompanyComponent } from './change-profile/company/company.component';
+import { CarComponent } from './change-profile/car/car.component';
+import { SignInComponent } from './authentication/sign-in/sign-in.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
+import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
 
 
 
@@ -44,11 +56,18 @@ import { DatePipe } from '@angular/common';
     AddRideComponent,
     ControlRideComponent,
     DayOverviewComponent,
-    OverviewChangeComponent,
     AddFavouriteComponent,
     ChangeFavouriteComponent,
     ChangeSettingsComponent,
-    ChangeRideComponent
+    ChangeRideComponent,
+    NameComponent,
+    CompanyComponent,
+    CarComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgetPasswordComponent,
+    VerifyEmailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -63,19 +82,21 @@ import { DatePipe } from '@angular/common';
       {path: 'settings', component: SettingsComponent},
       {path: 'control-ride', component: ControlRideComponent},
       {path: 'add-favourite', component: AddFavouriteComponent},
-      {path: 'change-favourite/:id', component: ChangeFavouriteComponent},
+      {path: 'change-favourite/:id/:company/:postal/:street/:town', component: ChangeFavouriteComponent},
       {path: 'day-overview/:date', component: DayOverviewComponent},
       {path: 'change-ride/:id/:date', component: ChangeRideComponent},
+      {path: 'change-name/:id', component: NameComponent},
+      {path: 'change-company/:id', component: CompanyComponent},
+      {path: 'change-car/:id', component: CarComponent},
     ]),
     FormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
     MatDatepickerModule,
-    
-
-    
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

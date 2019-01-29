@@ -24,8 +24,8 @@
           <form #f="ngForm" (ngSubmit)="update(f.value)" >
             <div class="form-group col-md-12">
                 <label for="from">Van:</label><br>
-                <select ngModel required name="from" id="from" type=""  class="form-control" > 
-                    <option> </option>
+                <select ngModel required name="from" id="from" type=""  class="form-control"  > 
+                    <option > </option>
                   <option *ngFor="let favourite of (favourites$ | async)">{{favourite.company}}</option>
                 </select>
               </div>
@@ -44,7 +44,7 @@
                 <label for="desc">Omschrijving:</label><br>
                 <textarea ngModel name="desc" id="desc" class="form-control"></textarea>
               </div>
-            <button class="btn btn-add-ride" [disabled]="!f.valid">Wijzig rit</button>
+            <button class="btn btn-add-settings" [disabled]="!f.valid">Wijzig rit</button>
           </form>
         </div>
   </div>

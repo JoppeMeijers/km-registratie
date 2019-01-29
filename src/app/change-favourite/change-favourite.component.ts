@@ -15,12 +15,20 @@ change;
 
   @ViewChild("f") f:NgForm;
   id;
+  company;
+  postal;
+  street;
+  town;
   constructor(private FavouritesService: FavouritesService, private router: Router, private route: ActivatedRoute,private _location: Location) { }
 
   ngOnInit() {
     this.route.paramMap
     .subscribe(params =>{
       this.id = params.get('id');
+      this.company = params.get('company');
+      this.postal = params.get('postal');
+      this.street = params.get('street');
+      this.town = params.get('town');
     });
   }
 

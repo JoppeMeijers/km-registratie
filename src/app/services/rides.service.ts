@@ -33,7 +33,7 @@ export class RidesService {
       isActive: true,
       desc: (ride.desc),
       from: (ride.from),
-      to:  (ride.from),
+      to:  (ride.to),
       km: (ride.km)
     })
   }

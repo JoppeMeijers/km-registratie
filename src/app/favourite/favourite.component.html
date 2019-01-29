@@ -17,7 +17,7 @@
               <p>{{favourite.company}}</p>
           </div>
           <div class="col-2 edit-button">
-              <button class="btn" [routerLink]="['/change-favourite', favourite.id]" ><img src="assets/img/edit.svg"></button>
+              <button class="btn" [routerLink]="['/change-favourite', favourite.id, favourite.company, favourite.postal, favourite.street, favourite.town]" ><img src="assets/img/edit.svg"></button>
           </div>
       </div>
     </div>

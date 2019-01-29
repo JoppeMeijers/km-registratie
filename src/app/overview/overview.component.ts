@@ -17,6 +17,8 @@ export class OverviewComponent implements OnInit {
   uniqueDates = [];
   UniqueDatesFormat;
 
+  january;
+
 
   allRidesref: AngularFireList<any>;
   allRides$: Observable<any[]>;
@@ -38,6 +40,10 @@ export class OverviewComponent implements OnInit {
       }
     })
     this.uniqueDates.sort();
+
+    
+
+    console.log(this.uniqueDates);
    
   }
 

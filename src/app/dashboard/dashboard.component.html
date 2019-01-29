@@ -5,14 +5,18 @@
 </div>
 
 <div class="row car-info-dashboard">
-  <div class="col-6">
-    <p id="total-km-month">1678</p>
-    <p>KM deze maand</p>
-  </div>
-  <div class="col-6">
-      <img src="assets/img/car.svg">
-    <p>Autonaam, type</p>
-  </div>
+    <div class="col-6">
+      <div *ngFor="let car of (carData$ | async)">
+        <p id="total-km-month">{{car.totalKm}}</p>
+        <p>Totaal gereden KM</p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div *ngFor="let car of (carData$ | async)">
+        <img src="assets/img/car.svg">
+        <p>{{car.car}}</p>
+        </div>
+      </div>
 </div>
 
 <div class="row">

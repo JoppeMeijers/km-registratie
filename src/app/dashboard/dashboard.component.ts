@@ -1,4 +1,6 @@
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  carDataRef: AngularFireList<any>;
+  carData$: Observable<any[]>;
+
+  constructor(private db: AngularFireDatabase) { 
+
+    this.carDataRef = db.list('/profiles');
+    this.carData$ = this.carDataRef.valueChanges();
+  }
 
   ngOnInit() {
   }

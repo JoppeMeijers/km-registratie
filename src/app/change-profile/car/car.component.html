@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12 head-application-bar">
+      <h2>Profiel</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+  
+      <div class="col-4 back-button">
+          <a (click)="backClicked()"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
+      </div>
+      <div class="col-4 day-tiem">
+        <p>Auto wijzigen</p>  
+      </div> 
+      <div class="col-4">
+  
+      </div>
+    </div>
+  
+  <div class="row">
+      <div class="col-md-12 form-add-drive ">
+          <form #f="ngForm" (ngSubmit)="updateName(f.value)" >
+                <div class="form-group col-md-12">
+                  <label for="car">Auto:</label><br>
+                  <input ngModel required name="car" id="car" type="text" #clientName="ngModel" class="form-control">
+                </div>
+            <button class="btn btn-add-settings" [disabled]="!f.valid">Wijzig</button>
+          </form>
+        </div>
+  
+  </div>
+  
