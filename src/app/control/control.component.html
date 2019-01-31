@@ -1,0 +1,9 @@
+<div *ngFor="let login of (login$ | async)">
+  <div *ngIf="login < 1">
+    <h3>kleiner dan nul</h3>
+  </div>
+  <div *ngIf="login > 0">
+      <h3>groter dan nul</h3>
+    </div>
+
+</div>

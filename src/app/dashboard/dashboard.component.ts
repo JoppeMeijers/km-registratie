@@ -1,4 +1,4 @@
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,18 +11,18 @@ export class DashboardComponent implements OnInit {
 
   carDataRef: AngularFireList<any>;
   carData$: Observable<any[]>;
+  profile$;
 
   uid;
 
   constructor(private db: AngularFireDatabase) { 
+    localStorage.setItem('firstLogin', 'true');
     this.uid = localStorage.getItem('uid');
     this.carDataRef = db.list(this.uid + '/profiles');
     this.carData$ = this.carDataRef.valueChanges();
 
-   
-   
-
   }
+
 
   ngOnInit() {
   }

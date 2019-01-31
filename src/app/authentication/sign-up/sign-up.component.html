@@ -1,45 +1,39 @@
 <div class="displayTable">
   <div class="displayTableCell">
 
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-
+      <div class="authBlock">
+          <div class="row">
+            <div class="col-md-12 title-login">
+                <h3>Aanmelden</h3>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12 form-login">
       <div class="formGroup">
+          <label>E-mail adres</label><br>
         <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
       </div>
 
       <div class="formGroup">
+          <label>Wachtwoord</label><br>
         <input type="password" class="formControl" placeholder="Password" #userPwd required>
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <button type="button" class="btn btn-add-authentication" value="Registreren" (click)="authService.SignUp(userEmail.value, userPwd.value)">Registreren</button>
       </div>
 
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-
-      <!-- Continue with Facebook -->
-      <div class="formGroup">
-        <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-          <i class="fab fa-facebook"></i>
-          Continue with Facebook
-        </button>
-      </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
     </div>
   </div>
-
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="ToLogin">
+          <h5>Terug naar loginscherm</h5>
+          <button class="btn btn-back" routerLink="/sign-in">Terug</button>
+    </div>
+  </div>
+</div>
+</div>
 </div>

@@ -1,4 +1,4 @@
-<div class="col-sm-12 nav-menu">
+<div class="col-sm-12 nav-menu" *ngIf="AuthService.isLoggedIn && firstLogin">
   <ul>
     <Li routerLink="dashboard"><img src="assets/img/dashboard.svg"></Li>
     <Li routerLink="overview"><img src="assets/img/calendar.svg"></Li>

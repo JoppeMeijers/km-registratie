@@ -44,6 +44,8 @@ import { SignInComponent } from './authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
+import { ControlComponent } from './control/control.component';
+import { WizardComponent } from './wizard/wizard.component';
 
 
 
@@ -69,6 +71,8 @@ import { VerifyEmailComponent } from './authentication/verify-email/verify-email
     SignUpComponent,
     ForgetPasswordComponent,
     VerifyEmailComponent,
+    ControlComponent,
+    WizardComponent,
 
   ],
   imports: [
@@ -83,6 +87,7 @@ import { VerifyEmailComponent } from './authentication/verify-email/verify-email
       { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
       { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
       {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+      {path: 'control', component: ControlComponent, canActivate: [AuthGuard]},
       {path: 'overview', component: OverviewComponent, canActivate: [AuthGuard]},
       {path: 'add', component: AddRideComponent, canActivate: [AuthGuard]},
       {path: 'favourite', component: FavouriteComponent, canActivate: [AuthGuard]},
@@ -95,6 +100,7 @@ import { VerifyEmailComponent } from './authentication/verify-email/verify-email
       {path: 'change-name/:id', component: NameComponent, canActivate: [AuthGuard]},
       {path: 'change-company/:id', component: CompanyComponent, canActivate: [AuthGuard]},
       {path: 'change-car/:id', component: CarComponent, canActivate: [AuthGuard]},
+      {path: 'wizard', component: WizardComponent, canActivate: [AuthGuard]},
     ]),
     FormsModule,
     BrowserAnimationsModule,

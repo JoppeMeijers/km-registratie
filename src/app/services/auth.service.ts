@@ -38,7 +38,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['control']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -93,7 +93,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['control']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -111,7 +111,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
     }
     return userRef.set(userData, {
       merge: true
@@ -123,6 +123,7 @@ export class AuthService {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
       localStorage.removeItem('uid');
+      localStorage.removeItem('firstLogin');
       this.router.navigate(['sign-in']);
     })
   }
