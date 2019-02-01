@@ -11,7 +11,6 @@ export class NavbarComponent implements OnInit {
 
 
   constructor(private AuthService: AuthService) { 
-    this.firstLogin = localStorage.getItem('firstLogin');
     console.log(this.firstLogin);
 
   }

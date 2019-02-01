@@ -1,5 +1,32 @@
-<div class="row">
-  <div class="col-md-12 wizard">
+<div class="row wizard">
+  <div class="col-md-12 title-wizard">
+    <h3>Welkom bij Ritje</h3>
+    <p>
+      Geef hierbeneden de algemene gevens op om de juiste configuratie te maken voor uw app.
+    </p>
+  
+
+    <form #f="ngForm" (ngSubmit)="createProfile(f.value)" >
+        <div class="form-group col-md-12">
+          <label for="name">Naam:</label><br>
+          <input ngModel required name="name" id="name" type="text"  class="form-control">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="company">Bedrijf:</label><br>
+            <input ngModel required name="company" id="company" type="text"  class="form-control">
+          </div>
+          <div class="form-group col-md-12">
+              <label for="car">Type auto:</label><br>
+              <input ngModel required name="car" id="car" type="test"  class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="km">Huidig aantal km:</label><br>
+                <input ngModel required name="km" id="km" type="number"  class="form-control">
+              </div>
+        <button class="btn btn-add-wizard" [disabled]="!f.valid">Opslaan</button>
+      </form>
+
+
 
   </div>
 </div>

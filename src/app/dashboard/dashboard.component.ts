@@ -13,18 +13,26 @@ export class DashboardComponent implements OnInit {
   carData$: Observable<any[]>;
   profile$;
 
+  totalKm;
+
+
   uid;
 
+
   constructor(private db: AngularFireDatabase) { 
-    localStorage.setItem('firstLogin', 'true');
     this.uid = localStorage.getItem('uid');
     this.carDataRef = db.list(this.uid + '/profiles');
     this.carData$ = this.carDataRef.valueChanges();
-
+  
+    this.totalKm = localStorage.getItem("totalKm");
   }
 
 
   ngOnInit() {
+    
   }
+
+  
+
 
 }

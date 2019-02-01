@@ -43,4 +43,9 @@ change;
     this.router.navigate(['favourite']);
    }
 
+   delete(){
+     this.FavouritesService.delete(this.id);
+     this._location.back();
+   }
+
 }

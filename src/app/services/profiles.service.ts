@@ -11,6 +11,21 @@ export class ProfilesService {
     this.uid =  localStorage.getItem('uid');
   }
 
+  createProfile(newProfile){
+    this.db.object(this.uid + '/login').set({
+      loginTimes: "1",
+    });
+
+    this.db.object(this.uid + '/profiles/1').set({
+      id: ("1"),
+      name: (newProfile.name),
+      company: (newProfile.company),
+      car: (newProfile.car),
+      totalKm: (newProfile.km),
+      firstLogin: "1",
+    });
+  }
+
   updateName(profile, id){
     console.log(profile);
   
@@ -36,6 +51,13 @@ export class ProfilesService {
       id: (id),
       car: (profile.car),
     })
+  }
+
+  updateKm(km){
+    this.db.object(this.uid + '/profiles/1').update({
+      totalKm: km,
+    })
+
   }
 }
 

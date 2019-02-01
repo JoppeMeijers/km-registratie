@@ -42,13 +42,9 @@ export class OverviewComponent implements OnInit {
           this.uniqueDates.push(date.date);
       }
     })
-    this.uniqueDates.sort();
-
-    
-
-    console.log(this.uniqueDates);
-   
+    this.uniqueDates.sort();   
   }
+
 
   ngOnInit() {
   }

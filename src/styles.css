@@ -411,8 +411,53 @@
         font-size: 9pt;
     }
 
-  
+    .wizard{
+        background-color: #6DB4F0;
+    }
+    .title-wizard{
+        color: white;
+        padding-left: 0px;
+    }
 
+    .title-wizard p{
+        text-align: center;
+        margin-top: 3%;
+        padding-right: 3%;
+        padding-left: 3%;
+    }
 
+    .title-wizard h3{
+        color: white;
+        padding-top: 35%;
+        text-align: center
+    }
+
+    .btn-add-wizard{
+        background-color: white;
+        border-radius: 20px;
+        font-size: 11pt;
+        width: 60%;
+        margin-top: 8%;
+        margin-left: 20%;
+        color: black;
+        font-size: 9pt;
+     
+    }
+
+    .wizard{
+        height: 100%;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .btn-add-delete{
+        background-color: #E30425;
+        border-radius: 20px;
+        font-size: 11pt;
+        width: 40%;
+        margin-top: 3%;
+        margin-left: 30%;
+        color: white;
+    }
 }
 

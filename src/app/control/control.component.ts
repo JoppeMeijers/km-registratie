@@ -34,7 +34,6 @@ export class ControlComponent implements OnInit {
     }
 
     if(res < 1){
-   
       this.router.navigate(['wizard']);
     }
   }

@@ -27,7 +27,7 @@ export class DayOverviewComponent implements OnInit {
 
     this.allRidesDayref = db.list(this.uid +'/rides');
     this.allRidesDay$ = this.allRidesDayref.valueChanges();
-    this.allRidesDay$.subscribe(res=> console.log(res));
+ 
   }
 
   ngOnInit() {

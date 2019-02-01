@@ -96,7 +96,7 @@ import { WizardComponent } from './wizard/wizard.component';
       {path: 'add-favourite', component: AddFavouriteComponent, canActivate: [AuthGuard]},
       {path: 'change-favourite/:id/:company/:postal/:street/:town', component: ChangeFavouriteComponent, canActivate: [AuthGuard]},
       {path: 'day-overview/:date', component: DayOverviewComponent, canActivate: [AuthGuard]},
-      {path: 'change-ride/:id/:date', component: ChangeRideComponent, canActivate: [AuthGuard]},
+      {path: 'change-ride/:id/:date/:km', component: ChangeRideComponent, canActivate: [AuthGuard]},
       {path: 'change-name/:id', component: NameComponent, canActivate: [AuthGuard]},
       {path: 'change-company/:id', component: CompanyComponent, canActivate: [AuthGuard]},
       {path: 'change-car/:id', component: CarComponent, canActivate: [AuthGuard]},

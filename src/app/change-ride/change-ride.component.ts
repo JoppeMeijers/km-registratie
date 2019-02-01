@@ -15,6 +15,8 @@ export class ChangeRideComponent implements OnInit {
   @ViewChild("f") f:NgForm;
   id;
   date;
+  currentKM;
+  newKM;
 
   favouritesRef: AngularFireList<any>;
   favourites$: Observable<any[]>;
@@ -35,6 +37,7 @@ export class ChangeRideComponent implements OnInit {
     .subscribe(params =>{
       this.id = params.get('id');
       this.date = params.get('date');
+      this.currentKM = parseInt(params.get('km'));
     })
 
   }
@@ -44,8 +47,14 @@ export class ChangeRideComponent implements OnInit {
   }
 
   update(updateRide: HTMLInputElement){
+
     this.RidesService.update(updateRide, this.id, this.date);
     this.f.resetForm();
+    this._location.back();
+  }
+
+  delete(){
+    this.RidesService.delete(this.id);
     this._location.back();
   }
 

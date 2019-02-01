@@ -41,4 +41,8 @@ export class FavouritesService {
       town:  (client.companyTown)
     })
   }
+
+  delete(id){
+    this.db.object(this.uid + '/favourites/' +id).remove();
+  }
 }
