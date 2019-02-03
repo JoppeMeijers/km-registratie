@@ -15,10 +15,6 @@ import { Profile } from 'selenium-webdriver/firefox';
   styleUrls: ['./control-ride.component.css']
 })
 export class ControlRideComponent implements OnInit {
-
-currentTotalkm;
-newTotalkm;
-
   from;
   to;
   date;
@@ -28,7 +24,6 @@ newTotalkm;
   uid;
 
 
-test;
   saveData;
 
   constructor(private route: ActivatedRoute, private RidesService: RidesService, private router: Router, private _location: Location, private db: AngularFireDatabase, private ProfilesService: ProfilesService) { 

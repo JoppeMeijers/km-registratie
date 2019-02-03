@@ -7,7 +7,7 @@
 <div class="row car-info-dashboard">
     <div class="col-6">
       <div *ngFor="let car of (carData$ | async)">
-        <p id="total-km-month">{{totalKm}}</p>
+        <p id="total-km-month">{{car.totalKm}}</p>
         <p>Totaal gereden KM</p>
       </div>
     </div>

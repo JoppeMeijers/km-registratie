@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
     this.carDataRef = db.list(this.uid + '/profiles');
     this.carData$ = this.carDataRef.valueChanges();
   
-    this.totalKm = localStorage.getItem("totalKm");
+  
   }
 
 

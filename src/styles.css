@@ -3,11 +3,77 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+body{
+    background-color: #F7F7F7;
+}
+
+.nav-menu{
+    display: none;
+}
+
+hr{
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+.nav-menu-desktop{
+    width: 15%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+}
+
+.nav-menu-desktop ul{
+    list-style-type: none;
+    margin-top: 10%;
+    padding-left: 0;
+}
+
+.nav-menu-desktop ul li:hover{
+    background-color: #6DB4F0;
+}
+
+.nav-menu-desktop ul li{
+    margin-left: 0%;
+    padding: 15px 16px;
+
+}
+
+.nav-menu-desktop ul li img{
+    width: 20px;
+}   
+
+#middle-button-menu{
+    background-color: #FFFFFF;
+    padding: 10px 22px;
+ 
+}
+
+.menu-text-item{
+    margin-left: 4%;
+    font-weight: 700;
+    margin-top: 2%;
+}
+
+
+
+
 /* Portrait for smartphones , max device is 6/7/8+ */
 @media only screen and (max-width: 736px) and (orientation: portrait) { 
     body{
         background-color: #F7F7F7;
     }
+
+    .nav-menu{
+        display: block;
+    }
+
+    .nav-menu-desktop{
+        display: none;
+    }
+
     .nav-menu{
         overflow: hidden;
         border-top-style: solid;
@@ -459,5 +525,46 @@
         margin-left: 30%;
         color: white;
     }
+}
+
+/* Portrait for smartphones , max device is 6/7/8+ */
+@media only screen and (max-width: 375px) and (orientation: portrait) { 
+    body{
+        padding-bottom: 20%;
+    }
+
+    .nav-menu ul li img{
+        width: 17px;
+    }   
+ 
+
+    .btn-control-ride{
+        background-color: #6DB4F0;
+        color: white;
+        border-radius: 20px;
+        font-size: 11pt;
+        margin-left: 23%;
+        width: 140px;
+    }
+
+    .edit-button img {
+        margin-left: 2px;
+        margin-top: -10px;
+    }
+
+    .title-login h3 {
+        font-size: 14pt;
+        color: white;
+        text-align: center;
+        padding-top: 35%;
+        padding-bottom: 3%;
+    }
+
+    .title-wizard h3 {
+        color: white;
+        padding-top: 26%;
+        text-align: center;
+    }
+
 }
 

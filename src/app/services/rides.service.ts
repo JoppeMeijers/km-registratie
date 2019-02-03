@@ -41,6 +41,17 @@ export class RidesService {
   this.countKm();
   }
 
+  firstAdd(newRide){
+    this.rideId = Math.random().toString(36).substring(7) + Math.random().toString(36).substring(7);
+
+    this.db.object(this.uid + '/rides/' + this.rideId).set({
+      id: (this.rideId),
+      km: (newRide.km),
+      isActive: true,
+  });
+  this.countKm();
+  }
+
 
   update(ride, id, date){
     this.db.object(this.uid + '/rides/' + id).update({
@@ -75,7 +86,6 @@ export class RidesService {
       }
     })
     this.totalKm = this.uniqueRides.reduce(this.sum);
-    localStorage.setItem("totalKm", this.totalKm);
 
     this.db.object(this.uid + '/profiles/1').update({
       totalKm: (this.totalKm),
