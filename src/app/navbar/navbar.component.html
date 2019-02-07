@@ -11,17 +11,17 @@
 <div class="col-sm-12 nav-menu-desktop" *ngIf="AuthService.isLoggedIn">
   <ul>
       <hr>
-    <Li routerLink="dashboard"><img src="assets/img/dashboard.svg"><span class="menu-text-item">Dashboard</span></Li>
+    <Li routerLink="dashboard"><img src="assets/img/dashboard.svg"><span class="menu-text-item">Home</span></Li>
       <hr>
     <Li routerLink="overview"><img src="assets/img/calendar.svg"><span class="menu-text-item">Overzicht</span></Li>
       <hr>
     <li routerLink="add" ><img src="assets/img/add-black.svg"><span class="menu-text-item">Nieuwe rit</span></li>
       <hr>
-    <Li routerLink="favourite"><img src="assets/img/heart.svg"><span class="menu-text-item">Voorkeuren</span></Li>
+    <Li routerLink="favourite"><img src="assets/img/heart.svg"><span class="menu-text-item">Favorieten</span></Li>
       <hr>
     <Li routerLink="settings"><img src="assets/img/settings.svg"><span class="menu-text-item">Instellingen</span></Li>
       <hr>
-    <Li (click)="AuthService.SignOut()"><img src="assets/img/settings.svg"><span class="menu-text-item">Uitloggen</span></Li>
+    <Li (click)="AuthService.SignOut()"><img src="assets/img/logout.svg"><span class="menu-text-item">Uitloggen</span></Li>
       <hr>
   </ul>
 </div>

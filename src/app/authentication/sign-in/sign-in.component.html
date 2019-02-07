@@ -1,51 +1,56 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-
-    <div class="authBlock">
+<div class="container-fluid ">
+  <div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="authBlock">
+        <div class="row">
+          <div class="col-md-12 title-login">
+              <h3>Inloggen</h3>
+          </div>
+      </div>
+      </div>
+      <div class="container">
       <div class="row">
-        <div class="col-md-12 title-login">
-            <h3>Inloggen</h3>
+        <div class="col-md-12 form-login">
+        <div class="formGroup">
+          <label>Gebruikersnaam</label><br>
+          <input type="text" class="formControl" placeholder="Gebruikersnaam..." #userName required>
         </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 form-login">
-      <div class="formGroup">
-        <label>Gebruikersnaam</label><br>
-        <input type="text" class="formControl" placeholder="Gebruikersnaam..." #userName required>
-      </div>
-
-      <div class="formGroup">
-          <label>Wachtwoord</label><br>
-        <input type="password" class="formControl" placeholder="Wachtwoord..." #userPassword required>
-      </div>
-
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary btn-add-authentication" value="Inloggen" (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
-
-
-      <div class="forgotPassword">
-        <span routerLink="/forget-password">Wachtwoord vergeten?</span>
-      </div>
-    </div>
-    </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="new-user">
-          <h5>Nieuwe gebruikers</h5>
-          <p>
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique libero a elit efficitur eleifend. Proin turpis sem, pharetra id viverra eu, venenatis sed est.</p>
+  
+        <div class="formGroup">
+            <label>Wachtwoord</label><br>
+          <input type="password" class="formControl" placeholder="Wachtwoord..." #userPassword required>
         </div>
-    
-        <div class="redirectToLogin">
-          <button class="btn redirect" routerLink="/register-user">Aanmelden</button>
+  
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup">
+          <input type="button" class="btn btnPrimary btn-add-authentication" value="Inloggen" (click)="authService.SignIn(userName.value, userPassword.value)">
         </div>
-
+  
+  
+        <div class="forgotPassword">
+          <span routerLink="/forget-password">Wachtwoord vergeten?</span>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="new-user">
+            <h5>Nieuwe gebruikers</h5>
+            <p>
+  
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique libero a elit efficitur eleifend. Proin turpis sem, pharetra id viverra eu, venenatis sed est.</p>
+          </div>
+      
+          <div class="redirectToLogin">
+            <button class="btn redirect" routerLink="/register-user">Aanmelden</button>
+          </div>
+  
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
+
+
