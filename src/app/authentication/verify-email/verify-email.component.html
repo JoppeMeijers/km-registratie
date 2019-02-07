@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 <div class="displayTable">
   <div class="displayTableCell">
 
@@ -7,7 +7,9 @@
             <div class="col-md-12 title-login">
       <h3>Bedankt voor uw registratie</h3>
       </div>
-        </div>
+    </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-md-12 form-login">
       <div class="formGroup" *ngIf="authService.userData as user">
@@ -31,7 +33,7 @@
         <div class="col-md-12">
             <div class="ToLogin">
                 <h5>Terug naar loginscherm</h5>
-                <button class="btn btn-back" routerLink="/sign-in">Terug</button>
+                <button class="btn btn-back" routerLink="/" >Terug</button>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@
 
 body{
     background-color: #F7F7F7;
+    padding-bottom: 10%;
 }
 
 .nav-menu{
@@ -64,9 +65,8 @@ hr{
 }
 
 .head-application-bar h2{
-
-  text-align: left;
-  padding: 22px 0px 4px 240px;
+    text-align: center;
+  padding: 22px 0px 4px 40px;
   color: white;
   font-size: 16pt;
 }
@@ -168,16 +168,310 @@ hr{
     background-color: #6DB4F0;
     border-radius: 20px;
     font-size: 11pt;
-    width: 40%;
+    width: 20%;
     margin-top: 4%;
-    margin-left: 30%;
+    margin-left: 40%;
     color: white;
-    font-size: 9pt;
+    font-size: 12pt;
 }
 
 .ToLogin{
-    margin-top: 15%;
+    margin-top: 4%;
 }
+
+.car-info-dashboard{
+    padding: 30px 5px 40px 20%;
+    background-color: #6DB4F0;
+    color: white;
+    margin-bottom: 30px;
+}
+.car-info-dashboard img{
+    margin-top: 13px;
+    width: 45px;
+    margin-bottom: 3px;
+}
+
+#total-km-month{
+    font-size: 32pt;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.labels-tiem p{
+    font-weight: 700;
+    font-size: 14pt;
+    margin-top: 4%;
+    margin-left: 9%;
+    margin-bottom: 1%;
+}
+
+.favourites-list, .overview-list{
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+.settings-list{
+    margin-top: 0%;
+}
+
+.favourites-list p, .overview-list p,.settings-list p{
+    padding-top: 0.5%;
+    margin-bottom: 0px;
+}
+
+.overview-list ul{
+    padding-left: 0px;
+}   
+
+.overview-list ul li{
+    list-style: none;
+    font-weight: 300;
+    font-size: 11pt;
+    padding: 5px 0px;
+}
+
+.overview-list hr{
+    margin-top: -9px;
+}
+
+.check{
+    float: right;
+    color: #0089B2;
+}
+
+.check:hover{
+    opacity: 0.8;
+}
+
+.days-overview, .add-overview, .favourite-view{
+    margin-left: 10%;
+}
+
+
+
+.back-button{
+    margin-top: 8%;
+}
+
+.back-button a {
+    list-style: none;
+    
+}
+
+.back-button a li{
+    color:#0B8EB5;
+}
+
+.back-button a li img{
+    margin-top: -3px;
+    width: 12px;
+}
+
+.back-button:hover{
+    opacity: 0.7;
+}
+
+
+.day-tiem{
+    font-weight: 700;
+    font-size: 11pt;
+    margin-top: 8%;
+    margin-bottom: 0%;
+    text-align: center;
+    margin-left: -3%;
+}
+
+.item-view{
+    padding: 14px 15px;
+    border-radius: 10px;
+    margin: 20px 15px 5px 10%;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.item-view img{
+    width: 11px;
+    margin-right: 7px;
+    margin-top: -5px;
+}
+
+.item-view h3{
+    font-size: 13pt;
+}
+
+.item-view hr{
+    margin: 2px 0px 0px 0px;
+}
+
+.change-day-ride{
+    text-align: center;
+    color:#0089B2;
+}
+
+.change-day-ride a{
+    color:#0089B2;
+    font-size: 11pt;
+}
+
+.change-day-ride hr{
+    margin-top: 4px;
+   padding: 3px 0px;
+}
+
+.form-add-drive{
+    margin-top: 5%;
+}
+
+.form-group label{
+    font-weight: 700;
+    font-size: 12pt;
+}
+
+.form-group input,.form-group select,.form-group textarea{
+    box-shadow: 0 3px 12px #00000029, 0 3px 12px rgba(0,0,0,0.23);
+}
+
+.btn-add-ride{
+    background-color: #6DB4F0;
+    border-radius: 20px;
+    font-size: 11pt;
+    width: 20%;
+    margin-top: 3%;
+    margin-left: 40%;
+    color: white;
+}
+
+.title-label-control{
+    font-weight: 700;
+}
+
+.btn-add-settings{
+    background-color: #6DB4F0;
+    border-radius: 20px;
+    font-size: 11pt;
+    width: 20%;
+    margin-top: 3%;
+    margin-left: 40%;
+    color: white;
+}
+
+.btn-add-delete{
+    background-color: #E30425;
+    border-radius: 20px;
+    font-size: 11pt;
+    width: 20%;
+    margin-top: 3%;
+    margin-left: 40%;
+    color: white;
+}
+
+.btn-control-ride{
+    background-color: #6DB4F0;
+    color: white;
+    border-radius: 20px;
+    font-size: 11pt;
+    margin-top: 8%;
+    width: 140px;
+}
+
+.edit-button button{
+    padding-bottom: 0%;
+}
+
+.edit-button:hover{
+    opacity: 0.5;
+}
+
+.edit-button img{
+    margin-left: 500%;
+}
+
+.btn-add-favourite{
+    background-color: #6DB4F0;
+    color: white;
+    border-radius: 20px;
+    font-size: 11pt;
+    margin-top: 5%;
+    margin-left: 50%;
+    width: 20%;
+    margin-bottom: 20%;
+}
+
+.settings-label{
+    margin-top: 3%;
+    margin-bottom: 0%;
+    margin-left: 9%;
+    font-weight: 600;
+    font-size: 11pt;
+}
+
+.ToLogin h5{
+    text-align: center;
+}
+
+.btn-back{
+    background-color: #6DB4F0;
+    border-radius: 20px;
+    width: 10%;
+    margin-top: 2%;
+    margin-left: 45%;
+    color: white;
+    font-size: 12pt;
+}
+
+.btn-add-verification{
+    background-color: #6DB4F0;
+    border-radius: 20px;
+    font-size: 11pt;
+    width: 20%;
+    margin-top: 4%;
+    margin-left: 40%;
+    color: white;
+    font-size: 12pt;
+}
+
+.wizard{
+    background-color: #6DB4F0;
+}
+.title-wizard{
+    color: white;
+    padding-left: 0px;
+}
+
+.title-wizard p{
+    text-align: center;
+    margin-top: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.title-wizard h3{
+    color: white;
+    padding-top: 10%;
+    text-align: center
+}
+
+.btn-add-wizard{
+    background-color: white;
+    border-radius: 20px;
+    font-size: 11pt;
+    width: 10%;
+    margin-top: 8%;
+    margin-left: 45%;
+    color: black;
+    font-size: 11pt;
+ 
+}
+
+.wizard{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
 
 
 /* Portrait for smartphones , max device is 6/7/8+ */
@@ -574,11 +868,7 @@ hr{
     }
 
     .ToLogin{
-        margin-top: 15%;
-    }
-
-    .ToLogin h5{
-        text-align: center;
+        margin-top: 4%;
     }
 
     .btn-back{

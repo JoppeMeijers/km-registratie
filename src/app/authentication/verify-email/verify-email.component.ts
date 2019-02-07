@@ -16,4 +16,9 @@ export class VerifyEmailComponent implements OnInit {
   ngOnInit() {
   }
 
+  delete(){
+    localStorage.removeItem('uid');
+    localStorage.removeItem('user');
+  }
+
 }

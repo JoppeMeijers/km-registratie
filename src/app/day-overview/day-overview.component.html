@@ -9,7 +9,7 @@
 
  
   
-  <div class="row">
+  <div class="row days-overview">
 
     <div class="col-4 back-button">
         <a (click)="backClicked()"><li><img src="assets/img/back-arrow.svg">Terug</li></a>
@@ -26,31 +26,31 @@
       <div class=" item-view overview-list" *ngIf="ride.date == day">
           <div class="row">
             <div class="col-6">
-              <span class="title-label-control">Van:</span>
+              <span class="title-label-control"><b>Van:</b></span>
               <br>
               <span>{{ride.from}}</span>
             </div>
             <div class="col-6">
-              <span class="title-label-control">Naar:</span>
+              <span class="title-label-control"><b>Naar:</b></span>
               <br>
               <span>{{ride.to}}</span>
             </div>
           </div>
           <div class="row control-rows">
             <div class="col-6">
-              <span class="title-label-control">Datum:</span>
+              <span class="title-label-control"><b>Datum:</b></span>
                 <br>
                 <span>{{ride.date}}</span>
             </div>
             <div class="col-6">
-              <span class="title-label-control">Totale km:</span>
+              <span class="title-label-control"><b>Totale km:</b></span>
               <br>
               <span>{{ride.km}}</span>
              </div>
             </div>
             <div class="row control-rows">
               <div class="col-12">
-                <span class="title-label-control">Extra omschrijving:</span>
+                <span class="title-label-control"><b>Extra omschrijving:</b></span>
                 <br>
                 <span>{{ride.desc}}</span>
               </div>
