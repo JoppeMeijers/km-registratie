@@ -1,3 +1,4 @@
+
 import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard.ts.guard';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AuthService } from './services/auth.service';
@@ -47,6 +48,11 @@ import { VerifyEmailComponent } from './authentication/verify-email/verify-email
 import { ControlComponent } from './control/control.component';
 import { WizardComponent } from './wizard/wizard.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ExcelService } from './services/excel.service';
+
+
+
 
 
 @NgModule({
@@ -73,7 +79,6 @@ import { WizardComponent } from './wizard/wizard.component';
     VerifyEmailComponent,
     ControlComponent,
     WizardComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -108,8 +113,9 @@ import { WizardComponent } from './wizard/wizard.component';
     MatDatepickerModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    HttpClientModule
   ],
-  providers: [DatePipe, AuthService],
+  providers: [DatePipe, AuthService, ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
+import { User } from './../shared/services/user';
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "../shared/services/user";
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -17,7 +17,21 @@ export class AuthService {
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,  
     public ngZone: NgZone // NgZone service to remove outside scope warning
-  ) {    
+  ) {   
+
+    /* Saving user data in localstorage when 
+    logged in and setting up null when logged out */
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.userData = user;
+        localStorage.setItem('uid', this.userData.uid);
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        JSON.parse(localStorage.getItem('user'));
+      } else {
+        localStorage.setItem('user', null);
+        JSON.parse(localStorage.getItem('user'));
+      }
+    })
 
   }
 
@@ -70,17 +84,6 @@ export class AuthService {
   get isLoggedIn(): boolean {
         /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('uid', this.userData.uid);
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
@@ -95,7 +98,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['control']);
+          this.router.navigate(['dashboard']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -113,19 +116,19 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: user.emailVerified
     }
     return userRef.set(userData, {
       merge: true
     })
   }
 
+
   // Sign out 
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
       localStorage.removeItem('uid');
-      localStorage.removeItem('firstLogin');
       this.router.navigate(['sign-in']);
     })
   }

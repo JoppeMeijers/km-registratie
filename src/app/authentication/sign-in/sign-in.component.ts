@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -12,8 +14,12 @@ export class SignInComponent implements OnInit {
 
   constructor(
     public authService: AuthService
-  ) { }
+  ) {
+    
+   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    localStorage.removeItem('user');
+  }
 
 }

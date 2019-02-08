@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,15 +11,14 @@ import { Component, OnInit } from '@angular/core';
 export class VerifyEmailComponent implements OnInit {
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService, private Router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  delete(){
-    localStorage.removeItem('uid');
-    localStorage.removeItem('user');
+  login(){
+    this.authService.SignOut();
   }
 
 }
